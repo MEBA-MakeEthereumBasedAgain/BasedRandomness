@@ -40,3 +40,36 @@ Currently Based Randomness is deployed in:
 ```solidity
 import "./interfaces/IBasedRandomness.sol";
 ```
+
+- Declare a state variable for the BasedRandomness contract:
+
+```solidity
+IBasedRandomness public basedRandomness;
+```
+
+- In your contract's constructor or an initialization function, set the address of the deployed BasedRandomness contract:
+
+- ```solidity
+  constructor(address _basedRandomnessAddress) {
+    basedRandomness = IBasedRandomness(_basedRandomnessAddress);
+}
+```
+
+1. Request Random Numbers
+- You can easily request the generation of one or more random numbers, and optionally send a CumulativeHash to further enhance the level of unpredictability.
+- The **maxNumbers** is a uint256 parameter that defines the upper limit of the random number generation.
+- The **IncludeZero** is a boolean parameter. When set to true, it includes 0 in the range of possible outcomes during the number generation process.
+- For example, if **maxNumbers** is set to 100 and **IncludeZero** true, the system will generate a number between 0 and 100.
+
+```solidity
+function requestRandomNumbers(uint256[] memory maxNumbers, bool includeZero) external {
+    bytes32 initialCumulativeHash = 0; // Or generate a unique value for more unpredictability
+    bytes32[] memory requestIds = basedRandomness.prepareRandomNumbers(maxNumbers, initialCumulativeHash, includeZero);
+    
+    // Store requestIds for later use
+    for (uint256 i = 0; i < requestIds.length; i++) {
+        // Store each requestId, e.g., in a mapping
+        randomRequests[i] = requestIds[i];
+    }
+}
+```
