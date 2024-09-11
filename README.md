@@ -71,7 +71,7 @@ In your contract's constructor or an initialization function, set the address of
 }
 ```
 
-1. Request Random Numbers
+1. **Request Random Numbers**
 - You can easily request the generation of one or more random numbers, and optionally send a CumulativeHash to further enhance the level of unpredictability.
 - The **maxNumbers** is a uint256 parameter that defines the upper limit of the random number generation.
 - The **IncludeZero** is a boolean parameter. When set to true, it includes 0 in the range of possible outcomes during the number generation process.
@@ -91,7 +91,7 @@ function requestRandomNumbers(uint256[] memory maxNumbers, bool includeZero) ext
 }
 ```
 
-2. Generate Random Numbers
+2. **Generate Random Numbers**
 
 - After 4 blocks you can call the **generateRandomNumbers** functions with the IDs and receive the random numbers requested.
 
