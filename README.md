@@ -15,7 +15,7 @@ To achieve truly fair and unpredictable randomness, the process involves two key
 
 1. To request random numbers:
 - a. Prepare an array of maxNumbers, where each maxNumber corresponds to one Request ID for a random number. The upper bound for each random number is 2**120 (VERY BIG).
-- b. OPTIONAL: For more unpredictability, generate an initialCumulativeHash (can be any unique bytes32 value), or you can just use 0.
+- b. Optional: For more unpredictability, generate an initialCumulativeHash (can be any unique bytes32 value), or you can just use 0.
 - c. Call prepareRandomNumbers() with these parameters
 - d. Implement a custom logic to store the returned requestIds in bytes32.
 
@@ -60,6 +60,7 @@ In your contract's constructor or an initialization function, set the address of
 - The **maxNumbers** is a uint256 parameter that defines the upper limit of the random number generation.
 - The **IncludeZero** is a boolean parameter. When set to true, it includes 0 in the range of possible outcomes during the number generation process.
 - For example, if **maxNumbers** is set to 100 and **IncludeZero** true, the system will generate a number between 0 and 100.
+- Store the IDs received for the step 2
 
 ```solidity
 function requestRandomNumbers(uint256[] memory maxNumbers, bool includeZero) external {
@@ -73,3 +74,23 @@ function requestRandomNumbers(uint256[] memory maxNumbers, bool includeZero) ext
     }
 }
 ```
+
+2. Generate Random Numbers
+
+- After 4 blocks you can call the **generateRandomNumbers** functions with the IDs and receive the random numbers requested.
+
+```solidity
+function generateRandomNumbers() external {
+    bytes32[] memory storedRequestIds = new bytes32[](/* number of stored requestIds */);
+    // Populate storedRequestIds with the previously stored requestIds
+    
+    uint256[] memory randomNumbers = basedRandomness.generateRandomNumbers(storedRequestIds);
+    
+    // Use the generated random numbers
+    for (uint256 i = 0; i < randomNumbers.length; i++) {
+        // Process each random number
+    }
+}
+```
+
+## Randomness Security
