@@ -6,7 +6,7 @@
 
 BasedRandomness ensures unpredictability and security through several mechanisms:
 
-1. **External Entropy**: It uses an external entropy source [BASE_ENTROPY](https://github.com/MEBA-MakeEthereumBasedAgain/BasedRandomness/blob/main/BasedEntrophy.sol) to add unpredictability to the random number generation process.
+1. **External Entropy**: It uses an external entropy source [BasedEntrophy](https://github.com/MEBA-MakeEthereumBasedAgain/BasedRandomness/blob/main/BasedEntrophy.sol) to add unpredictability to the random number generation process.
 2. **Block Information**: The contract incorporates block data (number, hash, prevrandao) to make the randomness dependent on the blockchain state.
 3. **User-Provided Data**: The initialCumulativeHash allows users to add their own additional source of randomness.
 4. **Time Delay**: The requirement to wait for 4 blocks between requesting and generating random numbers and using the block hash of the 3 next blocks after the randomness request, prevents manipulation of block data to influence the outcome.
