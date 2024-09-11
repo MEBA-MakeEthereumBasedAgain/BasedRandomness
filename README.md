@@ -52,7 +52,8 @@ In your contract's constructor or an initialization function, set the address of
 ```solidity
   constructor(address _basedRandomnessAddress) {
     basedRandomness = IBasedRandomness(_basedRandomnessAddress);
-}```
+}
+```
 
 1. Request Random Numbers
 - You can easily request the generation of one or more random numbers, and optionally send a CumulativeHash to further enhance the level of unpredictability.
