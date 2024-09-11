@@ -94,3 +94,15 @@ function generateRandomNumbers() external {
 ```
 
 ## Randomness Security
+
+BasedRandomness ensures unpredictability and security through several mechanisms:
+
+1. **External Entropy**: It uses an external entropy source (BASE_ENTROPY) to add unpredictability to the random number generation process.
+2. **Block Information**: The contract incorporates block data (number, hash, prevrandao) to make the randomness dependent on the blockchain state.
+3. **User-Provided Data**: The initialCumulativeHash allows users to add their own additional source of randomness.
+4. **Time Delay**: The requirement to wait for 4 blocks between requesting and generating random numbers and using the block hash of the 3 next blocks after the randomness request, prevents manipulation of block data to influence the outcome.
+5. **Cumulative Hashing**: The contract uses a rolling hash that incorporates data from multiple blocks, making it resistant to single-block manipulations.
+6. **One-Time Use**: Each request ID can only be used once, preventing replay attacks.
+
+These features combine to create a system that is resistant to various forms of manipulation and provides a high degree of unpredictability for on-chain random number generation.
+
