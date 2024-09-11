@@ -40,7 +40,7 @@ To achieve truly fair and unpredictable randomness, the process involves two key
 
 ### Addresses
 
-In every network you find and can use the Based Randomness interacting with this address: **0x2ef017cf798a6a4d111f0d03a1e3c2e01fb2dec7**
+In every network you find and can use the Based Randomness interacting with this address: **0x656cd3a1cef30f475cbba68bc5764f7d1c4c884a**
 
 Currently Based Randomness is deployed in:
 
