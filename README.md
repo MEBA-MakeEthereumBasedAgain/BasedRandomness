@@ -35,21 +35,21 @@ Currently Based Randomness is deployed in:
 
 ### Implementation Guide
 
-- Import in your contract the IBasedRandomness interface
+Import in your contract the IBasedRandomness interface
 
 ```solidity
 import "./interfaces/IBasedRandomness.sol";
 ```
 
-- Declare a state variable for the BasedRandomness contract:
+Declare a state variable for the BasedRandomness contract:
 
 ```solidity
 IBasedRandomness public basedRandomness;
 ```
 
-- In your contract's constructor or an initialization function, set the address of the deployed BasedRandomness contract:
+In your contract's constructor or an initialization function, set the address of the deployed BasedRandomness contract:
 
-- ```solidity
+```solidity
   constructor(address _basedRandomnessAddress) {
     basedRandomness = IBasedRandomness(_basedRandomnessAddress);
 }```
