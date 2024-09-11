@@ -28,7 +28,7 @@ To achieve truly fair and unpredictable randomness, the process involves two key
 
 1. To request random numbers:
 - a. Prepare an array of maxNumbers, where each maxNumber corresponds to one Request ID for a random number. The upper bound for each random number is 2**120 (VERY BIG).
-- b. Optional: For more unpredictability, generate an initialCumulativeHash (can be any unique bytes32 value), or you can just use 0x0000000000000000000000000000000000000000000000000000000000000000.
+- b. Optional: For more unpredictability, generate an initialCumulativeHash (can be any unique bytes32 value), or you can just use 0x000...000.
 - c. Call prepareRandomNumbers() with these parameters
 - d. Implement a custom logic to store the returned requestIds in bytes32.
 
