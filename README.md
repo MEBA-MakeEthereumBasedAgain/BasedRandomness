@@ -44,8 +44,9 @@ In every network you find and can use the Based Randomness interacting with this
 
 Currently Based Randomness is deployed in:
 
-[base](https://basescan.org/address/0x656cd3a1cef30f475cbba68bc5764f7d1c4c884a)
-[Base Sepolia](https://sepolia.basescan.org/address/0x656cd3a1cef30f475cbba68bc5764f7d1c4c884a)
+[Base](https://basescan.org/address/0x656cd3a1cef30f475cbba68bc5764f7d1c4c884a) |
+[Base Sepolia](https://sepolia.basescan.org/address/0x656cd3a1cef30f475cbba68bc5764f7d1c4c884a) |
+[Optimism](https://optimistic.etherscan.io/address/0x656cd3a1cef30f475cbba68bc5764f7d1c4c884a) |
 
 ### Implementation Guide
 
