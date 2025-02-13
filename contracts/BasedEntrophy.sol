@@ -3,6 +3,8 @@ pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
+// Before to deploy edit these addresses based on the network you deploy to.
+
 contract BasedEntrophy {
     address private immutable USDC_TOKEN = 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913;
     address private immutable WETH_TOKEN = 0x4200000000000000000000000000000000000006;
